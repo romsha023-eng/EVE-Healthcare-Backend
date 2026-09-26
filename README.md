@@ -244,10 +244,10 @@ Create a `.env` file from `.env.example`:
 cp .env.example .env
 ```
 
-`.env` content:
+`.env.example` template:
 ```env
-DATABASE_URL=postgresql://postgres:postgrespassword@localhost:5432/eve_db
-JWT_SECRET=super-secret-key-change-in-production
+DATABASE_URL=postgresql://<username>:<password>@localhost:5432/<database_name>
+JWT_SECRET=<your_jwt_secret_key>
 JWT_ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 ```
