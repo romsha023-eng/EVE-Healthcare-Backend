@@ -168,9 +168,9 @@ erDiagram
     users {
         int id PK
         string name
-        string email UNIQUE
+        string email UK
         string password_hash
-        enum role "USER | ADMIN"
+        string role "USER or ADMIN"
         datetime created_at
     }
 
@@ -201,7 +201,7 @@ erDiagram
         int centre_id FK
         datetime appointment_datetime
         numeric amount
-        enum status "PENDING | CONFIRMED | FAILED | CANCELLED"
+        string status "PENDING, CONFIRMED, FAILED, CANCELLED"
         datetime created_at
         datetime updated_at
     }
@@ -210,7 +210,7 @@ erDiagram
         int id PK
         int booking_id FK
         numeric amount
-        enum status "SUCCESS | FAILED"
+        string status "SUCCESS or FAILED"
         string provider_transaction_id
         datetime created_at
         datetime updated_at
@@ -218,7 +218,7 @@ erDiagram
 
     webhook_events {
         int id PK
-        string event_id UNIQUE
+        string event_id UK
         string event_type
         text payload
         datetime processed_at
